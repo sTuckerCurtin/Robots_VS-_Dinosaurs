@@ -19,3 +19,6 @@ class Battlefield:
     def display_winner(self):
         pass
         
+
+from dinosaur import Dinosaur
+from robot import Robot
