@@ -1,5 +1,6 @@
 from dinosaur import Dinosaur
 from robot import Robot
+from weapon import Weapon
 
 
 
@@ -7,11 +8,14 @@ from robot import Robot
 class Battlefield:
     def __init__(self):
         self.robot = Robot("RoBob")
-        self.dinosaur = Dinosaur("Super Mega Dino", 25)
+        self.dinosaur = Dinosaur("Super Mega Dino", 20)
+        
+        
 
 
     def run_game(self):
         self.display_welcome()
+        self.robot.weapon_select()
         self.battle_phase()
         self.display_winner()
             
@@ -33,7 +37,7 @@ class Battlefield:
                 break
             self.dinosaur.attack(self.robot)
             if self.dinosaur.health <= 0:
-                print(f"{self.dinosaur.name} is the Winner!")
+                print(f"{self.robot.name} is the Winner!")
             
 
 
@@ -47,6 +51,7 @@ class Battlefield:
             print(f"{self.robot.name} has won! The NEW Champion of the World !")
         else:
             print("It's a tie!")
+
 
        
        
